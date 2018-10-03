@@ -5,10 +5,10 @@ import './App.css';
 const Card = (props) => {
   return(
     <div style={{margin: '1em', display: 'flex'}}>
-      <img style={{height: '10em'}} src={props.avatarURL}/>
+      <img style={{height: '10em'}} src={props.avatar_url}/>
       <div className='info' style={{margin: '1em'}}>
-        <div style={{fontSize: '2.25em', fontWeight: 'bold'}}>Name here ..</div>
-        <div>Company name</div>
+        <div style={{fontSize: '2.25em', fontWeight: 'bold'}}>{props.name}</div>
+        <div>{props.company}</div>
       </div>
     </div>
   )
@@ -30,7 +30,7 @@ let data = [
 const CardList = (props) => {
   return(
     <div>
-      {props.cards.map(card => <Card avatarURL={card.avatar_url} />)}
+      {props.cards.map(card => <Card {...card} />)}
     </div>
   )
 }
