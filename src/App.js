@@ -14,6 +14,13 @@ const Card = (props) => {
   )
 }
 
+const CardList = (props) => {
+	return(
+  	<Card />
+  )
+}
+
+ReactDOM.render(<CardList />, mountNode);
 class App extends Component {
   render() {
     return (
