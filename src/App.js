@@ -35,10 +35,24 @@ const CardList = (props) => {
   )
 }
 
+class Form extends React.Component {
+	render() {
+    return(
+    	<form>
+      	<input type="text" paceholder="GitHub username" />
+        <button type="submitt">Add cart</button>
+      </form>
+    )
+  }
+}
+
 class App extends Component {
   render() {
     return (
-      <CardList cards={data}/>
+      <div>
+        <Form />
+        <CardList cards={data}/>
+      </div>
     );
   }
 }
