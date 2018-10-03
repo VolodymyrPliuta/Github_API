@@ -23,10 +23,17 @@ const CardList = (props) => {
 }
 
 class Form extends React.Component {
+	handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit form", this.userNameInput.value)
+  }
 	render() {
     return(
-    	<form>
-      	<input type="text" paceholder="GitHub username" />
+    	<form onSubmit={this.handleSubmit}>
+      	<input type="text"
+ 							 paceholder="GitHub username" required
+               ref={(input) => this.userNameInput = input}
+               />
         <button type="submitt">Add cart</button>
       </form>
     )
