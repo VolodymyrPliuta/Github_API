@@ -14,19 +14,6 @@ const Card = (props) => {
   )
 }
 
-let data = [
-  {
-    name: "John",
-    avatar_url: "https://avatars0.githubusercontent.com/u/3?v=4",
-    company: "Facebook"
-  },
-  {
-    name: "Nick",
-    avatar_url: "https://avatars0.githubusercontent.com/u/5?v=4",
-    company: "Google"
-  }
-]
-
 const CardList = (props) => {
   return(
     <div>
@@ -47,11 +34,25 @@ class Form extends React.Component {
 }
 
 class App extends Component {
+  state = {
+    cards: [
+      {
+        name: "John",
+        avatar_url: "https://avatars0.githubusercontent.com/u/3?v=4",
+        company: "Facebook"
+      },
+      {
+        name: "Nick",
+        avatar_url: "https://avatars0.githubusercontent.com/u/5?v=4",
+        company: "Google"
+      }
+    ]
+  }
   render() {
     return (
       <div>
         <Form />
-        <CardList cards={data}/>
+        <CardList cards={this.state.cards}/>
       </div>
     );
   }
